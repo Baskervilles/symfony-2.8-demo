@@ -1,0 +1,13 @@
+default:
+    formatters:
+        pretty:
+            verbose:  true
+            paths:    false
+            snippets: false
+
+    extensions:
+        Behat\MinkExtension:
+            base_url:  'http://localhost:8000/'
+            sessions:
+                default:
+                    goutte: ~
