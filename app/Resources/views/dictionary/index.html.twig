@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Dictionary list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dictionary in dictionaries %}
+            <tr>
+                <td><a href="{{ path('admin_dictionary_show', { 'id': dictionary.id }) }}">{{ dictionary.id }}</a></td>
+                <td>{{ dictionary.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_dictionary_show', { 'id': dictionary.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_dictionary_edit', { 'id': dictionary.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_dictionary_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

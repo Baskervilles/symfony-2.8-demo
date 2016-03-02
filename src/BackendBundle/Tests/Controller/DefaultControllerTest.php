@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Tests\Controller;
+namespace BackendBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -12,7 +12,6 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/');
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertContains('Symfony!', $crawler->filter('h1')->text());
+        $this->assertContains('Hello World', $client->getResponse()->getContent());
     }
 }
