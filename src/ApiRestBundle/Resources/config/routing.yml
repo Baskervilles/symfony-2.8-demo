@@ -1,0 +1,5 @@
+dictionaries:
+    type:     rest
+    resource: ApiRestBundle\Controller\DictionaryController
+    prefix:   /dictionaries
+    name_prefix: api_

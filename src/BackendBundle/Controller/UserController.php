@@ -8,9 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class UserController extends Controller
 {
     /**
-     * @Route("/user/")
+     * @Route("/user")
      */
-    public function index()
+    public function indexAction()
     {
         return $this->render("@Backend/User/index.html.twig");
     }
